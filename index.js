@@ -21,10 +21,28 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+
+// menggabungkan nama barang dan kuantitas barang per id
+const listBelanjaan = function() {
+  let arrGabung = [];
+  for (let id = 0; id < dataBelanjaan.length; id++) {
+      let gabung = "- "+ dataBelanjaan[id].nama + " x " + dataBelanjaan[id].kuantitas;
+      arrGabung.push(gabung);
+    }
+    return arrGabung;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+// total rupiah belanja dari seluruh listBelanjaan
+const totalBelanjaan = function() {
+  let numTotal = 0;
+  for (id = 0; id < dataBelanjaan.length; id++) {
+      let tempTotal = dataBelanjaan[id].kuantitas * dataBelanjaan[id].harga;
+      numTotal = numTotal + tempTotal;
+  }
+    
+  return numTotal;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
